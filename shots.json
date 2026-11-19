@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-cover.jpg","note":"Checklist with progress bar, kind filters and the first trophies; 6 trophies pre-earned so progress shows","path":"/","seed":{"earned":[2,3,4,8,15,17]},"viewport":{"height":720,"width":1280}},{"file":"2-guide.jpg","note":"A trophy's guide open with its sources (The Shootist, 42 Shooting Range challenges)","path":"/#trophy-17","seed":{"earned":[2,3,4,8,15,17]},"viewport":{"height":720,"width":1280}},{"file":"3-roadmap.jpg","note":"Roadmap to the platinum: six stages with per-stage earned counts and missable note","path":"/#roadmap","seed":{"earned":[2,3,4,8,15,17]},"viewport":{"height":720,"width":1280}},{"file":"4-spoiler.jpg","note":"Spoiler-safe mode on: hidden story trophies show as Hidden trophy until earned","path":"/","scrollY":420,"seed":{"earned":[2,3,4,8,15,17],"spoiler":true},"viewport":{"height":720,"width":1280}}]
