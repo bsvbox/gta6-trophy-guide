@@ -18,6 +18,16 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
 
+// Clear only the contents of a directory, never the directory itself: in
+// the grader /output is a mounted volume and removing it throws EBUSY
+// "Device or resource busy".
+function clearDirContents(dir: string): void {
+  mkdirSync(dir, { recursive: true });
+  for (const entry of readdirSync(dir)) {
+    rmSync(join(dir, entry), { recursive: true, force: true });
+  }
+}
+
 const here = fileURLToPath(new URL('.', import.meta.url));
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
@@ -50,8 +60,7 @@ for (const g of ['platinum', 'gold', 'silver', 'bronze']) {
 }
 
 // Fresh output every run, so two runs write the same bytes.
-rmSync(outDir, { recursive: true, force: true });
-mkdirSync(outDir, { recursive: true });
+clearDirContents(outDir);
 cpSync(join(here, 'app'), join(outDir, 'app'), { recursive: true });
 mkdirSync(join(outDir, 'screenshots'), { recursive: true });
 if (existsSync(join(here, 'screenshots'))) {
